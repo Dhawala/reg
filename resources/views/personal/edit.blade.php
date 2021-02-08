@@ -13,7 +13,7 @@
     <div class="card card-2">
         <div class="card-heading"></div>
         <div class="card-body">
-            <h2 class="title">Applicant Registration Form</h2>
+            <h2 class="title">Edit Registration Form</h2>
             <form method="POST" action="{{url('/personal/'.$applicant->reference_key)}}">
                 @csrf
                 @method('post')
@@ -87,8 +87,9 @@
                     @error('phone_number')<span class="danger">{{$message}}</span>@enderror
                     @error('email')<span class="danger">{{$message}}</span>@enderror
                 </div>
-                <div class="p-t-30">
-                    <button class="btn btn--radius btn--green" type="submit">Submit and Next <i
+                <div class="row row-space">
+                    <span class="pull-to-start"></span>
+                    <button class="btn btn--radius btn--green pull-to-end" type="submit">Submit and Next <i
                             class="fa fa-arrow-right"></i></button>
                 </div>
             </form>

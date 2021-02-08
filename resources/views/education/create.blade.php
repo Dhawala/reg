@@ -2,9 +2,10 @@
 @section('style')
     <style>
         .card-2 .card-heading {
-            background: url("../images/undraw_exams_g4ow.svg") top left/cover no-repeat;
+            background: url("../images/undraw_certification_aif8.svg") top left/cover no-repeat;
             width: 29.1%;
-            background-position: 10%, 0%;
+            background-position: 20%, 0%;
+            background-size: 150%;
             display: table-cell;
         }
     </style>
@@ -71,11 +72,33 @@
                         </div>
                     </div>
 
-
-                    <button class="btn btn--radius btn--red">Submit</button>
-                    <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                    <div class="row row-space" style="">
+                        <button class="btn btn--radius btn--blue pull-to-start"
+                        >Add <i class="fa fa-plus"></i></button>
+                        <div class="input-group pull-to-end">
+                            <a href="{{url('/personal/'.$applicant->reference_key)}}"
+                               class="btn btn--radius btn--green ">
+                                <i class="fa fa-arrow-left"></i> Previous</a>
+                            <a href="{{url('/work/'.$applicant->reference_key)}}" class="btn btn--radius btn--green"
+                            >Submit and next <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </form>
+
+            <div class="p-t-30">
+                <div class="input-group p-b-10 row row-space">
+                    <span class="pull-to-start">
+                        <h2>BSc in Computer Science</h2>
+                        <p>First-Class Honours</p>
+                        <p>Graduated @ 2018-07-28</p>
+                        <p><strong>From: Open University </strong></p>
+                    </span>
+                    <span class="pull-to-end">
+                        <a href="" class="btn btn--red btn--radius"><strong>X</strong></a>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

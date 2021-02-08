@@ -87,8 +87,10 @@
                     @error('phone_number')<span class="danger">{{$message}}</span>@enderror
                     @error('email')<span class="danger">{{$message}}</span>@enderror
                 </div>
-                <div class="p-t-30">
-                    <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                <div class="row row-space">
+                    <span class="pull-to-start"></span>
+                    <button class="btn btn--radius btn--green pull-to-end" type="submit">Submit and Next
+                        <i class="fa fa-arrow-right"></i></button>
                 </div>
             </form>
         </div>

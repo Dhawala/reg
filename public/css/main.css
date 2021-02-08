@@ -32,16 +32,18 @@
     width: -moz-calc((100% - 60px) / 2);
     width: calc((100% - 60px) / 2);
 }
+
 .col-4 {
-    width: -webkit-calc((100% ) );
-    width: -moz-calc((100% ) );
-    width: calc((100% ) );
+    width: -webkit-calc((100%));
+    width: -moz-calc((100%));
+    width: calc((100%));
 }
 
 @media (max-width: 767px) {
     .col-2 {
         width: 100%;
     }
+
     .col-4 {
         width: 100%;
     }
@@ -199,6 +201,10 @@ h6 {
     padding-bottom: 100px;
 }
 
+.p-b-10 {
+    padding-bottom: 10px;
+}
+
 /* ==========================================================================
    #WRAPPER
    ========================================================================== */
@@ -242,10 +248,41 @@ h6 {
     background: #57b846;
 }
 
+.btn--blue {
+    background: #466ab9;
+}
+
+.btn--red {
+    background: #b43131;
+}
+
 .btn--green:hover {
     background: #4dae3c;
 }
 
+.btn--blue:hover {
+    background: #3e5ea3;
+}
+
+.btn--red:hover {
+    background: #a02c2c;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
 /* ==========================================================================
    #DATE PICKER
    ========================================================================== */
@@ -491,6 +528,7 @@ input {
     width: 100%;
     display: table;
 }
+
 .card-2 .card-heading {
     background: url("../images/undraw_interview_rmcf.svg") top left/cover no-repeat;
     width: 29.1%;
@@ -520,4 +558,15 @@ input {
         display: block;
         padding: 60px 50px;
     }
+}
+
+/* ==========================================================================
+   #ALIGNMENT
+   ========================================================================== */
+.pull-to-end {
+    align-self: end
+}
+
+.pull-to-start {
+    align-self: start
 }
