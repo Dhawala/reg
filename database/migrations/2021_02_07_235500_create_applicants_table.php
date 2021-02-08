@@ -15,6 +15,10 @@ class CreateApplicantsTable extends Migration
     {
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
+            $table->string('surname','60');
+            $table->string('firstname','150');
+            $table->string('nic_number','12');
+            $table->string('phone_number','15');
             $table->timestamps();
         });
     }

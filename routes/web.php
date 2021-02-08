@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\ApplicantController::class,'personal']);
+Route::post('/', [\App\Http\Controllers\ApplicantController::class,'personal_save']);

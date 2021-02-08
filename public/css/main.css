@@ -326,6 +326,12 @@ input {
   cursor: pointer;
 }
 
+.danger{
+    color: red;
+    font-size: small;
+    font-weight: bold;
+}
+
 .input--style-2 {
   padding: 9px 0;
   color: #666;
