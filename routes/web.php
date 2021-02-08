@@ -24,3 +24,7 @@ Route::get('/firsttimeuser/{reference_key}',[\App\Http\Controllers\FirstTimeUser
 Route::get('/education', [\App\Http\Controllers\ApplicantController::class,'education']);
 Route::post('/education', [\App\Http\Controllers\ApplicantController::class,'education_save']);
 
+Route::get('/email_return',function (){
+    return new \App\Mail\ApplicantConfermationMail();
+});
+
