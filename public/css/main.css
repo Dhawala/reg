@@ -32,9 +32,17 @@
     width: -moz-calc((100% - 60px) / 2);
     width: calc((100% - 60px) / 2);
 }
+.col-4 {
+    width: -webkit-calc((100% ) );
+    width: -moz-calc((100% ) );
+    width: calc((100% ) );
+}
 
 @media (max-width: 767px) {
     .col-2 {
+        width: 100%;
+    }
+    .col-4 {
         width: 100%;
     }
 }

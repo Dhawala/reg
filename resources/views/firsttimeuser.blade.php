@@ -14,7 +14,7 @@
         <div class="card-heading"></div>
         <div class="card-body">
             <h2 class="title" style="color: #3F3D56">Hi {{$applicant->surname}}, We have sent You an Email..!</h2>
-            <form method="GET" action="{{url('/education')}}">
+            <form method="GET" action="{{url('/education/'.$applicant->reference_key)}}">
                 <div class="row row-space">
                     <h4 style="color: #6C63FF">If you need to change any detail you are about to submit, You can do so by clicking on the link sent to your email.
                     </h4>
