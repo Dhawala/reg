@@ -2,7 +2,7 @@
 @section('style')
     <style>
         .card-2 .card-heading {
-            background: url("../images/undraw_certification_aif8.svg") top left/cover no-repeat;
+            background: url("../images/undraw_QA_engineers_dg5p.svg") top left/cover no-repeat;
             width: 29.1%;
             background-position: 20%, 0%;
             background-size: 150%;
@@ -14,20 +14,32 @@
     <div class="card card-2">
         <div class="card-heading"></div>
         <div class="card-body">
-            <h2 class="title">Educational Qualifications</h2>
-            <form method="POST" action="{{url('/education/'.$applicant->reference_key)}}">
+            <h2 class="title">Work Experience</h2>
+            <form method="POST" action="{{url('/work/'.$applicant->reference_key)}}">
                 @csrf
                 @method('post')
 
                 <div class="p-t-30">
                     <div class="row row-space">
                         <div class="col-4">
-                            <div class="input-group @error('degree_title') input_error @enderror">
+                            <div class="input-group @error('company_name') input_error @enderror">
                                 <input type="text"
-                                       placeholder="Title of the Degree / Diploma / Certificate (e.g. BSc in Computer Science)"
-                                       name="degree_title"
+                                       placeholder="Company Name"
+                                       name="company_name"
                                        class="input--style-2"
-                                       value="{{old('degree_title')}}"
+                                       value="{{old('company_name')}}"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-4">
+                            <div class="input-group @error('positon') input_error @enderror">
+                                <input type="text"
+                                       placeholder="Position"
+                                       name="position"
+                                       class="input--style-2"
+                                       value="{{old('position')}}"
                                 >
                             </div>
                         </div>
@@ -36,63 +48,42 @@
                     <div class="row row-space">
 
                         <div class="col-2">
-                            <div class="input-group @error('class_id') input_error @enderror">
-                                <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="class_id" required>
-                                        <option selected disabled>Class</option>
-                                        @foreach($classes as$class)
-                                        <option value="{{$class->id}}" {{ $class->id==old('class_id')?'selected':'' }}>
-                                            {{$class->name}}
-                                        </option>
-                                        @endforeach
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
+                            <div class="input-group @error('from') input_error @enderror">
+                                <input class="input--style-2 js-datepicker" type="text" placeholder="Starting date"
+                                       value="{{old('from')}}"
+                                       name="from">
+                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                             </div>
                         </div>
 
                         <div class="col-2">
-                            <div class="input-group @error('graduation_date') input_error @enderror">
-                                <input class="input--style-2 js-datepicker" type="text" placeholder="Graduation Date"
-                                       value="{{old('graduation_date')}}"
-                                       name="graduation_date">
+                            <div class="input-group @error('to') input_error @enderror">
+                                <input class="input--style-2 js-datepicker" type="text" placeholder="Ending date"
+                                       value="{{old('to')}}"
+                                       name="to">
                                 <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="row row-space">
-                        <div class="col-4">
-                            <div class="input-group @error('university_name') input_error @enderror">
-                                <input type="text"
-                                       value="{{old('university_name')}}"
-                                       placeholder="Name of the University / Institution"
-                                       name="university_name"
-                                       class="input--style-2"
-                                >
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="row row-space" style="">
                         <button class="btn btn--radius btn--blue pull-to-start"
                         >Add <i class="fa fa-plus"></i></button>
                         <div class="input-group pull-to-end">
-                            @if($applicant->educational_qualification->count()!=0)
-                            <a href="{{url('/personal/'.$applicant->reference_key)}}"
+                            @if($applicant->work_expereance->count()!=0)
+                            <a href="{{url('/education/'.$applicant->reference_key)}}"
                                class="btn btn--radius btn--green ">
                                 <i class="fa fa-arrow-left"></i> Previous</a>
-                            <a href="{{url('/work/'.$applicant->reference_key)}}" class="btn btn--radius btn--green"
-                            >Next <i class="fa fa-arrow-right"></i></a>
                             @endif
                         </div>
                     </div>
                     <div class="row row-space">
-                        @error('degree_title')<span class="danger">{{$message}}</span>@enderror
-                        @error('class_id')<span class="danger">{{$message}}</span>@enderror
-                        @error('university_name')<span class="danger">{{$message}}</span>@enderror
-                        @error('graduation_date')<span class="danger">{{$message}}</span>@enderror
+                        @error('company_name')<span class="danger">{{$message}}</span>@enderror
+                        @error('position')<span class="danger">{{$message}}</span>@enderror
+                        @error('from')<span class="danger">{{$message}}</span>@enderror
+                        @error('to')<span class="danger">{{$message}}</span>@enderror
                     </div>
                 </div>
             </form>

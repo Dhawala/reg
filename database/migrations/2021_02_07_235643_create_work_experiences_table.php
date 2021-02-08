@@ -15,6 +15,15 @@ class CreateWorkExperiencesTable extends Migration
     {
         Schema::create('work_experiences', function (Blueprint $table) {
             $table->id();
+            $table->integer('applicant_id')->unsigned();
+            $table->foreign('applicant_id')->references('id')
+                ->on('applicants')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string('company_name',60);
+            $table->string('position',60);
+            $table->date('from');
+            $table->date('to');
             $table->timestamps();
         });
     }

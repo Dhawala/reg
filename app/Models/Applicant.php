@@ -12,4 +12,8 @@ class Applicant extends Model
     public function educational_qualification(){
         return $this->hasMany(EducationalQualification::class);
     }
+
+    public function work_experience(){
+        return $this->hasMany(WorkExperience::class);
+    }
 }

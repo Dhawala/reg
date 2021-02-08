@@ -27,6 +27,8 @@
                                        placeholder="Title of the Degree / Diploma / Certificate (e.g. BSc in Computer Science)"
                                        name="degree_title"
                                        class="input--style-2"
+                                       maxlength="100"
+                                       required
                                        value="{{old('degree_title')}}"
                                 >
                             </div>
@@ -70,7 +72,8 @@
                                        placeholder="Name of the University / Institution"
                                        name="university_name"
                                        class="input--style-2"
-                                >
+                                       maxlength="100"
+                                       required>
                             </div>
                         </div>
                     </div>
