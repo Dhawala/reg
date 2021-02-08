@@ -21,8 +21,8 @@ Route::post('/', [\App\Http\Controllers\ApplicantController::class,'personal_sav
 
 Route::get('/firsttimeuser/{reference_key}',[\App\Http\Controllers\FirstTimeUserController::class,'firsttimeuser']);
 
-Route::get('/education', [\App\Http\Controllers\ApplicantController::class,'education']);
-Route::post('/education', [\App\Http\Controllers\ApplicantController::class,'education_save']);
+Route::get('/education', [\App\Http\Controllers\EducationController::class,'education']);
+Route::post('/education', [\App\Http\Controllers\EducationController::class,'education_save']);
 
 Route::get('/email_return',function (){
     return new \App\Mail\ApplicantConfermationMail();

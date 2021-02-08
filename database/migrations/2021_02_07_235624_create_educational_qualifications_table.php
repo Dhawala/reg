@@ -15,6 +15,15 @@ class CreateEducationalQualificationsTable extends Migration
     {
         Schema::create('educational_qualifications', function (Blueprint $table) {
             $table->id();
+            $table->integer('applicant_id')->unsigned();
+            $table->foreign('applicant_id')->references('id')
+                ->on('applicants')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->string('degree_title',100);
+            $table->string('class',30);
+            $table->string('university_name',100);
+            $table->date('graduation_date');
             $table->timestamps();
         });
     }

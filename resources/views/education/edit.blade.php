@@ -4,7 +4,7 @@
         .card-2 .card-heading {
             background: url("../images/undraw_exams_g4ow.svg") top left/cover no-repeat;
             width: 29.1%;
-            background-position: 55%, 0%;
+            background-position: 10%, 0%;
             display: table-cell;
         }
     </style>
