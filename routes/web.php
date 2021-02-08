@@ -23,6 +23,11 @@ Route::get('/firsttimeuser/{reference_key}',[\App\Http\Controllers\FirstTimeUser
 
 Route::get('/education/{reference_key}', [\App\Http\Controllers\EducationController::class,'education']);
 Route::post('/education/{reference_key}', [\App\Http\Controllers\EducationController::class,'education_save']);
+Route::delete('/education/{id}', [\App\Http\Controllers\EducationController::class,'education_delete']);
+
+Route::get('/work/{reference_key}', [\App\Http\Controllers\WorkController::class,'work']);
+Route::post('/work/{reference_key}', [\App\Http\Controllers\WorkController::class,'work_save']);
+Route::delete('/work/{id}', [\App\Http\Controllers\WorkController::class,'work_delete']);
 
 Route::get('/email_return',function (){
     return new \App\Mail\ApplicantConfermationMail();

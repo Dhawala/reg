@@ -21,7 +21,11 @@ class CreateEducationalQualificationsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->string('degree_title',100);
-            $table->string('class',30);
+            $table->integer('class_id')->unsigned();
+            $table->foreign('class_id')->references('id')
+                ->on('degree_classes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->string('university_name',100);
             $table->date('graduation_date');
             $table->timestamps();
