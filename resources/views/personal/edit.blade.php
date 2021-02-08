@@ -14,7 +14,7 @@
         <div class="card-heading"></div>
         <div class="card-body">
             <h2 class="title">Applicant Registration Form</h2>
-            <form method="POST" action="{{url('/')}}">
+            <form method="POST" action="{{url('/personal/'.$applicant->reference_key)}}">
                 @csrf
                 @method('post')
                 <div class="row row-space">
@@ -23,7 +23,7 @@
                             <input class="input--style-2 " type="text"
                                    placeholder="Surname"
                                    name="surname"
-                                   value="{{old('surname')}}"
+                                   value="{{$applicant->surname}}"
                                    maxlength="60"
                                    required>
                         </div>
@@ -33,7 +33,7 @@
                             <input class="input--style-2" type="text"
                                    placeholder="First Names"
                                    name="firstname"
-                                   value="{{old('firstname')}}"
+                                   value="{{$applicant->firstname}}"
                                    maxlength="150"
                                    required
                             >
@@ -49,7 +49,7 @@
                                    placeholder="NIC Number"
                                    name="nic_number"
                                    maxlength="12"
-                                   value="{{old('nic_number')}}"
+                                   value="{{$applicant->nic_number}}"
                                    required
                             >
                         </div>
@@ -62,7 +62,7 @@
                                    placeholder="Phone"
                                    name="phone_number"
                                    maxlength="15"
-                                   value="{{old('phone_number')}}"
+                                   value="{{$applicant->phone_number}}"
                                    required
                             >
                         </div>
@@ -75,7 +75,7 @@
                                    placeholder="E-Mail"
                                    name="email"
                                    maxlength="60"
-                                   value="{{old('email')}}"
+                                   value="{{$applicant->email}}"
                             >
                         </div>
                     </div>
@@ -88,7 +88,8 @@
                     @error('email')<span class="danger">{{$message}}</span>@enderror
                 </div>
                 <div class="p-t-30">
-                    <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                    <button class="btn btn--radius btn--green" type="submit">Submit and Next <i
+                            class="fa fa-arrow-right"></i></button>
                 </div>
             </form>
         </div>
