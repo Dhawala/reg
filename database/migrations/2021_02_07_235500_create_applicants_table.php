@@ -19,6 +19,8 @@ class CreateApplicantsTable extends Migration
             $table->string('firstname','150');
             $table->string('nic_number','12');
             $table->string('phone_number','15');
+            $table->string('email',60)->unique();
+            $table->string('reference_key');
             $table->timestamps();
         });
     }

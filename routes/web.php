@@ -13,5 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/personal/{reference_key}', [\App\Http\Controllers\ApplicantController::class,'personal_edit']);
+Route::post('/personal/{reference_key}', [\App\Http\Controllers\ApplicantController::class,'personal_update']);
+
 Route::get('/', [\App\Http\Controllers\ApplicantController::class,'personal']);
 Route::post('/', [\App\Http\Controllers\ApplicantController::class,'personal_save']);
+
+Route::get('/firsttimeuser/{reference_key}',[\App\Http\Controllers\FirstTimeUserController::class,'firsttimeuser']);
+
+Route::get('/education', [\App\Http\Controllers\ApplicantController::class,'education']);
+Route::post('/education', [\App\Http\Controllers\ApplicantController::class,'education_save']);
+
