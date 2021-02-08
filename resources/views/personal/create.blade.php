@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+    <div class="page-wrapper bg-red p-t-120 p-b-100 font-robo">
         <div class="wrapper wrapper--w960">
             <div class="card card-2">
                 <div class="card-heading"></div>
@@ -37,56 +37,48 @@
                         <div class="row row-space">
                         <div class="col-2">
                         <div class="input-group">
-                            <input class="input--style-2" type="text" placeholder="Surname" name="surname">
+                            <input class="input--style-2" type="text" placeholder="Surname" name="surname" required>
                         </div>
                         </div>
                         <div class="col-2">
                         <div class="input-group">
-                            <input class="input--style-2" type="text" placeholder="First Names" name="firstname">
+                            <input class="input--style-2" type="text" placeholder="First Names" name="firstname" required>
                         </div>
                         </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-2 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    <input class="input--style-2" type="text"
+                                           title="Valid Sri Lankan NIC numbers only"
+                                           pattern="^([0-9]{9}[x|X|v|V]|[0-9]{12})$"
+                                           placeholder="NIC Number"
+                                           name="nic_number"
+                                           required
+                                    >
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
-                                            <option disabled="disabled" selected="selected">Gender</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                            <option>Other</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
+                                    <input class="input--style-2" type="text"
+                                           title="Phone numbers only"
+                                           pattern="^(\+\d{1,3}[- ]?)?\d{10}$"
+                                           placeholder="Mobile"
+                                           name="mobile_number"
+                                           required
+                                    >
                                 </div>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="class">
-                                    <option disabled="disabled" selected="selected">Class</option>
-                                    <option>Class 1</option>
-                                    <option>Class 2</option>
-                                    <option>Class 3</option>
-                                </select>
-                                <div class="select-dropdown"></div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-2" type="text" placeholder="Registration Code" name="res_code">
+                                    <input class="input--style-2" type="email" placeholder="E-Mail" name="email">
                                 </div>
                             </div>
                         </div>
                         <div class="p-t-30">
-                            <button class="btn btn--radius btn--green" type="submit">Search</button>
+                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
