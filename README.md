@@ -16,9 +16,9 @@ Visit working website on
 ## Downloading and Installation
 the application is using laravel PHP framework with bootstrap 4 CSS and jQuery javascript library
 
-- Composer PHP package manager 
 - Lamp or windows wampp stack installation 
 - PHP ^7.3.5 required
+- Composer PHP package manager
 - Mysql ^5.7.26 required
 
 After downloading the repository. Run following CLI commands in saved directory
@@ -29,6 +29,8 @@ After downloading the repository. Run following CLI commands in saved directory
 `php artisan migrate` -laravel helper to create database tables
 
 `php artisan db:seed` - laravel helper to populate database with fake data. 
+
+Database dump is in `/database/reg.sql` path.
 
 
 
