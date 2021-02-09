@@ -14,7 +14,7 @@ class CreateWorkExperiencesTable extends Migration
     public function up()
     {
         Schema::create('work_experiences', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unsigned();
             $table->integer('applicant_id')->unsigned();
             $table->foreign('applicant_id')->references('id')
                 ->on('applicants')

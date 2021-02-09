@@ -14,7 +14,7 @@ class CreateEducationalQualificationsTable extends Migration
     public function up()
     {
         Schema::create('educational_qualifications', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unsigned();
             $table->integer('applicant_id')->unsigned();
             $table->foreign('applicant_id')->references('id')
                 ->on('applicants')
