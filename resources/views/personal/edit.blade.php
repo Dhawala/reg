@@ -13,7 +13,7 @@
     <div class="card card-2">
         <div class="card-heading"></div>
         <div class="card-body">
-            <h2 class="title">Edit Registration Form</h2>
+            <h2 class="title">Edit Your data</h2>
             <form method="POST" action="{{url('/personal/'.$applicant->reference_key)}}">
                 @csrf
                 @method('post')
@@ -71,12 +71,13 @@
                 <div class="row row-space">
                     <div class="col-2">
                         <div class="input-group @error('email') input_error @enderror">
-                            <input class="input--style-2" type="email"
-                                   placeholder="E-Mail"
-                                   name="email"
-                                   maxlength="60"
-                                   value="{{$applicant->email}}"
-                            >
+                            <strong style="
+                            padding: 9px 0;
+                            color: #cccccc;
+                            font-size: 16px;
+                            font-weight: 500;
+                            ">{{$applicant->email}}</strong>
+
                         </div>
                     </div>
                 </div>
