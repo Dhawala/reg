@@ -17,7 +17,7 @@ class CreateEducationalQualificationsTable extends Migration
             $table->id();
             $table->foreignId('applicant_id')->constrained()->onDelete('restrict');
             $table->string('degree_title',100);
-            $table->foreignId('class_id')->constrained()->onDelete('restrict');
+            $table->foreignId('class_id')->constrained('degree_classes')->onDelete('restrict');
             $table->string('university_name',100);
             $table->date('graduation_date');
             $table->timestamps();
