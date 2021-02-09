@@ -14,7 +14,7 @@ class CreateApplicantsTable extends Migration
     public function up()
     {
         Schema::create('applicants', function (Blueprint $table) {
-            $table->id()->unsigned();
+            $table->id();
             $table->string('surname','60');
             $table->string('firstname','150');
             $table->string('nic_number','12');

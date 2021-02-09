@@ -14,18 +14,10 @@ class CreateEducationalQualificationsTable extends Migration
     public function up()
     {
         Schema::create('educational_qualifications', function (Blueprint $table) {
-            $table->id()->unsigned();
-            $table->integer('applicant_id')->unsigned();
-            $table->foreign('applicant_id')->references('id')
-                ->on('applicants')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->id();
+            $table->foreignId('applicant_id')->constrained()->onDelete('restrict');
             $table->string('degree_title',100);
-            $table->integer('class_id')->unsigned();
-            $table->foreign('class_id')->references('id')
-                ->on('degree_classes')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreignId('class_id')->constrained()->onDelete('restrict');
             $table->string('university_name',100);
             $table->date('graduation_date');
             $table->timestamps();
