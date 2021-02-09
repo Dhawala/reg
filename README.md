@@ -7,12 +7,12 @@ following assumptions are made apart from the given information.
 - The application dos not require an applicant to login in order to apply at the moment.
 - Applicant will b able to edith their own details any time they want
 - All applicants are of Sri Lankan nationality(only accepts valid Sri Lankan NIC Numbers.)
-the application is using laravel PHP framework with bootstrap 4 CSS and jQuery javascript library 
 - Backend for staff members to view applicant info is not needed at the moment.
 - any additional information other than one's given in the document are not needed.
 
 
 ## Downloading and Installation
+the application is using laravel PHP framework with bootstrap 4 CSS and jQuery javascript library
 
 - Composer PHP package manager 
 - Lamp or windows wampp stack installation 
