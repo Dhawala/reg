@@ -535,13 +535,6 @@ input {
     display: table;
 }
 
-.card-2 .card-heading {
-    background: url("../images/undraw_interview_rmcf.svg") top left/cover no-repeat;
-    width: 29.1%;
-    background-position: 55%, 0%;
-    display: table-cell;
-}
-
 .card-2 .card-body {
     display: table-cell;
     padding: 80px 90px;

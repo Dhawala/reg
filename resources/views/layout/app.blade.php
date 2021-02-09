@@ -21,10 +21,9 @@
     <!-- Vendor CSS-->
     <link href="{{asset('vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">
-
+    @yield('style')
     <!-- Main CSS-->
     <link href="{{asset('css/main.css')}}" rel="stylesheet" media="all">
-    @yield('style')
 </head>
 
 <body>
