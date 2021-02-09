@@ -15,7 +15,7 @@
         <div class="card-body">
             <h2 class="title" style="color: #3F3D56">Thank you {{$applicant->surname}} !</h2>
                 <div class="row row-space">
-                    <h4 style="color: #6C63FF"> If you want to change any thing, use the email link to visit.
+                    <h4 style="color: #6C63FF"> If you want to change any thing you entered, use the email link to visit.
                         <br>We will inform you when we are evaluating the applications.
                     </h4>
                 </div>
