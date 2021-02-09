@@ -28,7 +28,6 @@
                                        name="degree_title"
                                        class="input--style-2"
                                        maxlength="100"
-                                       required
                                        value="{{old('degree_title')}}"
                                 >
                             </div>
@@ -40,7 +39,7 @@
                         <div class="col-2">
                             <div class="input-group @error('class_id') input_error @enderror">
                                 <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="class_id" required>
+                                    <select name="class_id" >
                                         <option selected disabled>Class</option>
                                         @foreach($classes as$class)
                                         <option value="{{$class->id}}" {{ $class->id==old('class_id')?'selected':'' }}>
@@ -72,8 +71,7 @@
                                        placeholder="Name of the University / Institution"
                                        name="university_name"
                                        class="input--style-2"
-                                       maxlength="100"
-                                       required>
+                                       maxlength="100">
                             </div>
                         </div>
                     </div>

@@ -24,8 +24,7 @@
                                    placeholder="Surname"
                                    name="surname"
                                    value="{{old('surname')}}"
-                                   maxlength="60"
-                                   required>
+                                   maxlength="60">
                         </div>
                     </div>
                     <div class="col-2">
@@ -35,7 +34,6 @@
                                    name="firstname"
                                    value="{{old('firstname')}}"
                                    maxlength="150"
-                                   required
                             >
                         </div>
                     </div>
@@ -50,7 +48,7 @@
                                    name="nic_number"
                                    maxlength="12"
                                    value="{{old('nic_number')}}"
-                                   required
+
                             >
                         </div>
                     </div>
@@ -63,7 +61,7 @@
                                    name="phone_number"
                                    maxlength="15"
                                    value="{{old('phone_number')}}"
-                                   required
+
                             >
                         </div>
                     </div>
@@ -93,6 +91,7 @@
                         <i class="fa fa-arrow-right"></i></button>
                 </div>
             </form>
+            <p style="font-size: x-small"> Any trouble ? contact admin admin@reg.test</p>
         </div>
     </div>
 @endsection

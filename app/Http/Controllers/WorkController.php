@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Applicant;
+use App\Models\WorkExperience;
 use Illuminate\Http\Request;
 
 class WorkController extends Controller
@@ -11,35 +12,40 @@ class WorkController extends Controller
     {
         $applicant = Applicant::where(['reference_key' => $reference_key])
             ->with('work_experience')->first();
-dd($applicant);
         return view('work.create', compact('applicant'));
     }
 
     public function work_save(Request $request, $reference_key)
     {
         $this->validate($request, [
-            'degree_title' => 'max:100|required',
-            'class_id' => 'numeric|required',
-            'university_name' => 'required|max:100',
-            'graduation_date' => 'date|required',
+            'company_name' => 'max:100|required',
+            'position' => 'max:60|required',
+            'from' => 'date|required',
+            'to' => 'date|required',
         ]);
 
-        $applicant = Applicant::where(['reference_key' => $reference_key])->first();
+        $work = new WorkExperience();
+        $work->company_name = $request->company_name;
+        $work->position = $request->position;
+        $work->from = $request->from;
+        $work->to = $request->to;
 
-        $eq = new EducationalQualification();
-        $eq->degree_title = $request->degree_title;
-        $eq->class_id = $request->class_id;
-        $eq->university_name = $request->university_name;
-        $eq->graduation_date = $request->graduation_date;
+        Applicant::where(['reference_key' => $reference_key])
+            ->with('work_experience')
+            ->first()
+            ->work_experience()
+            ->save($work);
 
-        $applicant->educational_qualification()->save($eq);
-
-        return redirect('/work/' . $applicant->reference_key)->with('success','Saved successfully');
+        return redirect('/work/'.$reference_key)
+            ->with('success','Saved successfully');
 
     }
 
     public function work_delete($id)
     {
+        $reference_key = WorkExperience::find($id)->with('applicant')->first()->applicant->reference_key;
+
+        WorkExperience::find($id)->first()->delete();
         return redirect("/work/{$reference_key}")->with('success', 'Successfully deleted');
 
     }

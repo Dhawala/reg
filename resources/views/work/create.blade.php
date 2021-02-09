@@ -14,8 +14,8 @@
     <div class="card card-2">
         <div class="card-heading"></div>
         <div class="card-body">
-            <h2 class="title">Work Experience</h2>
-            <form method="POST" action="{{url('/work/'.$applicant->reference_key)}}">
+            <h2 class="title">Work Experience </h2>
+            <form method="POST" action="{{ url('/work/'.$applicant->reference_key.'/') }}">
                 @csrf
                 @method('post')
 
@@ -27,6 +27,7 @@
                                        placeholder="Company Name"
                                        name="company_name"
                                        class="input--style-2"
+                                       maxlength="100"
                                        value="{{old('company_name')}}"
                                 >
                             </div>
@@ -34,10 +35,11 @@
                     </div>
                     <div class="row row-space">
                         <div class="col-4">
-                            <div class="input-group @error('positon') input_error @enderror">
+                            <div class="input-group @error('position') input_error @enderror">
                                 <input type="text"
                                        placeholder="Position"
                                        name="position"
+                                       maxlength="60"
                                        class="input--style-2"
                                        value="{{old('position')}}"
                                 >
@@ -72,11 +74,12 @@
                         <button class="btn btn--radius btn--blue pull-to-start"
                         >Add <i class="fa fa-plus"></i></button>
                         <div class="input-group pull-to-end">
-                            @if($applicant->work_expereance->count()!=0)
                             <a href="{{url('/education/'.$applicant->reference_key)}}"
                                class="btn btn--radius btn--green ">
                                 <i class="fa fa-arrow-left"></i> Previous</a>
-                            @endif
+                            <a href="{{url('/done/'.$applicant->reference_key)}}" class="btn btn--radius btn--green"
+                            >Done <i class="fa fa-arrow-right"></i></a>
+
                         </div>
                     </div>
                     <div class="row row-space">
@@ -87,27 +90,25 @@
                     </div>
                 </div>
             </form>
-
-                <div class="p-t-30">
-                    @foreach($applicant->educational_qualification as $qualification)
-                        <div class="input-group p-b-10 row row-space">
+            <div class="p-t-30">
+                @foreach($applicant->work_experience as $work)
+                    <div class="input-group p-b-10 row row-space">
                         <span class="pull-to-start" style="width: 90%">
-                            <h3>{{$qualification->degree_title}}</h3>
-                            <p>{{$qualification->class}}</p>
-                            <p>Graduated @ {{$qualification->graduation_date}}</p>
-                            <p><strong>From: {{$qualification->university_name}} </strong></p>
+                            <h3>{{$work->position}}</h3>
+                            <p><strong>{{$work->company_name}}</strong></p>
+                            <p>from {{$work->from}} to {{$work->to}}</p>
                         </span>
-                            <span class="pull-to-end" style="width: 10%">
-                            <form method="post" action="{{url('/education/'.$qualification->id) }}" style="all: unset; display: inline-block">
+                        <span class="pull-to-end" style="width: 10%">
+                            <form method="post" action="{{url('/work/'.$work->id) }}"
+                                  style="all: unset; display: inline-block">
                                 @csrf
                                 @method('delete')
                             <button class="btn btn--red btn--radius"><strong>X</strong></button>
                             </form>
                         </span>
-                        </div>
-                    @endforeach
-                </div>
-
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

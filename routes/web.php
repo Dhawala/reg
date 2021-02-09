@@ -20,6 +20,7 @@ Route::get('/', [\App\Http\Controllers\ApplicantController::class,'personal']);
 Route::post('/', [\App\Http\Controllers\ApplicantController::class,'personal_save']);
 
 Route::get('/firsttimeuser/{reference_key}',[\App\Http\Controllers\FirstTimeUserController::class,'firsttimeuser']);
+Route::get('/done/{reference_key}',[\App\Http\Controllers\FirstTimeUserController::class,'done']);
 
 Route::get('/education/{reference_key}', [\App\Http\Controllers\EducationController::class,'education']);
 Route::post('/education/{reference_key}', [\App\Http\Controllers\EducationController::class,'education_save']);
