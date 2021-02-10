@@ -103,7 +103,7 @@
                         <div class="input-group p-b-10 row row-space">
                         <span class="pull-to-start" style="width: 90%">
                             <h3>{{$qualification->degree_title}}</h3>
-                            <p>{{$qualification->class}}</p>
+                            <p>{{$qualification->degree_class->name}}</p>
                             <p>Graduated @ {{$qualification->graduation_date}}</p>
                             <p><strong>From: {{$qualification->university_name}} </strong></p>
                         </span>

@@ -14,6 +14,6 @@ class EducationalQualification extends Model
     }
 
     public function degree_class(){
-        return $this->belongsTo(DegreeClass::class);
+        return $this->belongsTo(DegreeClass::class,'class_id','id');
     }
 }

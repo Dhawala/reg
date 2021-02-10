@@ -12,7 +12,7 @@ class EducationController extends Controller
     public function education($reference_key)
     {
         $applicant = Applicant::where(['reference_key' => $reference_key])
-            ->with('educational_qualification')->first();
+            ->with('educational_qualification.degree_class')->first();
         $classes = DegreeClass::all();
 
         return view('education.create', compact('applicant', 'classes'));
