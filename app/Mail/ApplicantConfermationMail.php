@@ -33,7 +33,7 @@ class ApplicantConfermationMail extends Mailable
             ->from('1234dhawala@gmail.com')
             ->with([
             'applicant'=>$this->applicant,
-            'user_url'=>'http://reg.test/personal/'.$this->applicant->reference_key.'/',
+            'user_url'=>env('app_url').$this->applicant->reference_key.'/',
         ]);
     }
 }
