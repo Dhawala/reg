@@ -20,8 +20,8 @@ class WorkController extends Controller
         $this->validate($request, [
             'company_name' => 'max:100|required',
             'position' => 'max:60|required',
-            'from' => 'date|required',
-            'to' => 'date|required',
+            'from' => 'required|before_or_equal:to',
+            'to' => 'required|after_or_equal:from'
         ]);
 
         $work = new WorkExperience();
