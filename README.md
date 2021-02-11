@@ -30,7 +30,7 @@ After downloading the repository. Run following CLI commands in saved directory
 
 `php artisan db:seed` - laravel helper to populate database with fake data. 
 
-Database dump is in `/database/reg.sql` path. you have to copy and rename .enc.example to .env and setup variables to your local environment.(all the basic laravel requirements)
+Database dump is in `/database/reg.sql` path. you have to copy and rename .enc.example to .env and setup variables to your local environment setting up test email environment is necessary.(all the basic laravel requirements)
 
 
 
