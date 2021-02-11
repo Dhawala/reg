@@ -5,7 +5,7 @@ following assumptions are made apart from the given information.
 
 - the application uses the email as user identification and sends emails to the user, therefore I assumed every applicant will have a properly working email address. 
 - The application dos not require an applicant to login in order to apply at the moment.
-- Applicant will b able to edith their own details any time they want
+- Applicant will be able to edit their own details any time they want.
 - All applicants are of Sri Lankan nationality(only accepts valid Sri Lankan NIC Numbers.)
 - Backend for staff members to view applicant info is not needed at the moment.
 - any additional information other than one's given in the document are not needed.
@@ -30,7 +30,7 @@ After downloading the repository. Run following CLI commands in saved directory
 
 `php artisan db:seed` - laravel helper to populate database with fake data. 
 
-Database dump is in `/database/reg.sql` path.
+Database dump is in `/database/reg.sql` path. you have to copy and rename .enc.example to .env and setup variables to your local environment.(all the basic laravel requirements)
 
 
 
